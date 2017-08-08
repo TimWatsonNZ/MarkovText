@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="MarkovTextChain.js"></script>
+        <script src="generator.js"></script>
+        <style>
+            
+            label {
+                width: 50%;
+                margin: 0px auto;
+                text-align: left;
+            }
+
+            textarea {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                resize: none;
+            }
+
+            .container{
+                width: 250px; 
+                margin: 0 auto;
+                padding-top: 50px;
+                display:block;
+                position:relative;
+                left:-150px;
+                font-family: monospace;
+            }
+
+            .title{
+                width: 250px; 
+                margin: 0 auto;
+                display:block;
+                padding-top: 50px;
+                position:relative;
+                left:-150px;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">Markov Text Generator: <br/>This program generates text by analying how likely a given word follows another or how
+            likely a given word follows a tuple of words.
+            <br />
+            To use, feed in some input and click Analyze, then click Generate. 
+            <br /><br />
+            Order controls the number of tuples to analyse, increasing the order should make the generated text more realistic
+            but less random. Output length is simply how long the generated text will be.
+            <br/><br />
+            TODO: Hook up some calls to APIs or other sources of text.
+        </div>
+        <div class="container">
+            <div>
+                <div>
+                    <label for="input">Input</label>
+                </div>
+                
+                <textarea id="input" rows="10" cols="80">Sample input</textarea>
+            </div>
+
+            <br />
+
+            <div>
+                <button id="analyze">Analyze</button>
+                <button id="generate">Generate</button>
+                <br/>
+                <br/>
+                <label id="orderLabel" for="orderField">Order:
+                    <input id="orderField" type="text" style="width:20px"/>
+                </label>
+
+                <label id="outputLengthFieldLabel" for="outputLengthField">Output length:
+                    <input id="outputLengthField" type="text" style="width:40px"/>
+                </label>
+            </div>
+
+            <br />
+            
+            <div>
+                
+            </div>
+
+            <div>
+                <label for="output">Output</label>
+                <br />
+                <textarea id="output" rows="10" cols="80">
+                </textarea>
+            </div>
+        </div>
+    </body>
+</html>
